@@ -12,3 +12,9 @@
 span {
   margin-left: 30px;
 }
+
+@media screen and (max-width: 480px) {
+  .listContainer {
+    width: 300px;
+  }
+}
