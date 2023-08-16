@@ -1,3 +1,4 @@
+
 import { useSelector, useDispatch } from 'react-redux';
 import { addContact } from 'redux/contactsSlice'; 
 import { getContacts } from 'redux/selectors'; 
@@ -8,10 +9,6 @@ import css from './ContactForm.module.css';
 const ContactForm = () => {
   const contacts = useSelector(getContacts);
   const dispatch = useDispatch();
-
-  const generatedId = () => {
-    return nanoid();
-  };
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -24,7 +21,7 @@ const ContactForm = () => {
       return;
     }
 
-    dispatch(addContact({ id: generatedId(), name, number }));
+    dispatch(addContact({ id: nanoid(), name, number }));
     event.target.reset(); 
   };
 
